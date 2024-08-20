@@ -1,4 +1,4 @@
-﻿namespace MauiAppShowDoMilhao
+﻿namespace JogoMilhao
 {
     public partial class MainPage : ContentPage
     {
