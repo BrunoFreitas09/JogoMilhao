@@ -1,58 +1,71 @@
-﻿using MauiAppShowDoMilhao.Models;
-
-namespace MauiAppShowDoMilhao
+﻿namespace MauiAppShowDoMilhao
 {
     public partial class MainPage : ContentPage
     {
-        bool resposta_correta = false;
+        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-
-
         private void Button_Clicked(object sender, EventArgs e)
         {
             this.BindingContext = App.getRandomPerguntaFacil();
         }
-
         private void Button_Clicked_Proxima(object sender, EventArgs e)
         {
+            bool acertou = false;
+            string resp = "";
+            bool valor;
 
-            string texto_alternativa = "";
-
-            bool resposta_correta = false;
-
-            if (alt_1.IsChecked)
+            if (alt0.IsChecked)
             {
-                texto_alternativa = alt_1.Content.ToString();
-                resposta_correta = (bool)alt_1.Value;
-            }
-            if (alt_2.IsChecked)
-            {
-                texto_alternativa = alt_2.Content.ToString();
-                resposta_correta = (bool)alt_2.Value;
-            }
-            if (alt_3.IsChecked)
-            {
-                texto_alternativa = alt_3.Content.ToString();
-                resposta_correta = (bool)alt_3.Value;
-            }
-            if (alt_4.IsChecked)
-            {
-                texto_alternativa = alt_4.Content.ToString();
-                resposta_correta = (bool)alt_4.Value;
+                if ((bool)alt0.Value)
+                {
+                    acertou = true;
+                    resp = alt0.Content.ToString();
+                }
             }
 
+            if (alt1.IsChecked)
+            {
+                if ((bool)alt1.Value)
+                {
+                    acertou = true;
+                    resp = alt1.Content.ToString();
+                }
+            }
 
+            if (alt2.IsChecked)
+            {
+                if ((bool)alt2.Value)
+                {
+                    acertou = true;
+                    resp = alt2.Content.ToString();
+                }
+            }
+
+            if (alt3.IsChecked)
+            {
+                if ((bool)alt3.Value)
+                {
+                    acertou = true;
+                    resp = alt3.Content.ToString();
+                }
+            }
+
+            if (acertou)
+            {
+                DisplayAlert("ACERTOU!", resp, "OK");
+                this.BindingContext = App.getRandomPerguntaFacil();
+
+            }
+            else
+            {
+                DisplayAlert("ERROU!", "Você perdeu", "OK");
+            }
         }
-
-        private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-
-        }
-
     }
+
 }

@@ -748,4 +748,6 @@ namespace JogoMilhao
             InitializeComponent();
             MainPage = new AppShell();
         }
+    }
+}
 
