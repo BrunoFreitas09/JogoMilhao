@@ -63,7 +63,7 @@
             }
             else
             {
-                DisplayAlert("ERROU!", "Você perdeu", "OK");
+                DisplayAlert("ERROU!", "bobão", "OK");
             }
         }
     }
