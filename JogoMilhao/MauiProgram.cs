@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
+
 namespace JogoMilhao
 {
     public static class MauiProgram
@@ -15,8 +16,10 @@ namespace JogoMilhao
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
