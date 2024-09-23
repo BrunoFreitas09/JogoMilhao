@@ -1,5 +1,6 @@
 ﻿using JogoMilhao.Models;
 using System.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace JogoMilhao
 {
@@ -785,11 +786,6 @@ namespace JogoMilhao
 
         static List<Pergunta> perguntas_sorteadas = new();
 
-
-
-        /**
-         * Sorteia uma pergunta fácil entre 1 e 20
-         */
         public static Pergunta getRandomPerguntaFacil()
         {
             Random r = new Random();
@@ -812,9 +808,7 @@ namespace JogoMilhao
             return pergunta_sorteada;
         }
 
-        /**
-         * Sorteia uma pergunta média entre 21 e 41
-         */
+
         public static Pergunta getRandomPerguntaMedia()
         {
             Random r = new Random();
@@ -837,9 +831,7 @@ namespace JogoMilhao
             return pergunta_sorteada;
         }
 
-        /**
-         * Sorteia uma pergunta dificil entre 1 e 20
-         */
+  
         public static Pergunta getRandomPerguntaDificil()
         {
             Random r = new Random();
@@ -862,9 +854,6 @@ namespace JogoMilhao
             return pergunta_sorteada;
         }
 
-        /**
-         * Sorteia uma pergunta dificil entre 1 e 20
-         */
         public static Pergunta getRandomPerguntaFinal()
         {
             Random r = new Random();
@@ -873,7 +862,7 @@ namespace JogoMilhao
 
             while (true)
             {
-                int sorteado = r.Next(61, 63);
+                int sorteado = r.Next(0, 19);
 
                 pergunta_sorteada = perguntas_finais[sorteado];
 
